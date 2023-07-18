@@ -11,6 +11,14 @@ const routes: Routes = [
 		}
 	},
 	{
+		href: '/get-started',
+		name: 'Get Started',
+		icon: {
+			filled: icons.apps,
+			outline: icons.apps
+		}
+	},
+	{
 		name: 'Components',
 		href: '/components',
 		icon: {

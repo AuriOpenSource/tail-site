@@ -46,7 +46,7 @@
 					</span>
 				</div>
 
-				<span class="navrail-item-title">
+				<span class="navrail-item-title text-label-small">
 					{name}
 				</span>
 			</a>
