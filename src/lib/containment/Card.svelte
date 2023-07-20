@@ -1,17 +1,30 @@
 <script lang="ts">
+	export let isLink = false;
+	export let isRoute = true;
 	export let filled = false;
 	export let outlined = false;
 	export let height = '';
-    export let backgroundImage: string | null = null;
+	export let href: string | null = null;
+	export let backgroundImage: string | null = null;
 	export let extraclasses = '';
+
+	let tag = isLink ? 'a' : 'section';
+
+	const a = {
+		href,
+		rel: 'noreferrer',
+		target: isRoute ? '_self' : '_blank'
+	};
 </script>
 
-<section 
-    style='background-image: url({backgroundImage});'
-    style:height 
-    class="card {extraclasses}" 
-    class:card-filled={filled} 
-    class:card-outlined={outlined}
-    >
+<svelte:element
+	this={tag}
+    {...isLink ? a : {}}
+	style="background-image: url({backgroundImage});"
+	style:height
+	class="card {extraclasses}"
+	class:card-filled={filled}
+	class:card-outlined={outlined}
+>
 	<slot />
-</section>
+</svelte:element>

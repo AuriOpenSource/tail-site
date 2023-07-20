@@ -17,3 +17,12 @@ export interface NavrailType {
 export interface NavrailTypes {
 	chosen: NavrailType;
 }
+
+export interface ComponentsFM {
+	title: string;
+	slug: string;
+	description: string;
+	lastUpdate: string;
+	categories: string;
+	published: boolean;
+}

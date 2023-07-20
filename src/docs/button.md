@@ -14,6 +14,7 @@ published: true
 ## Markdown
 
 <div>
-```
+```ts
+  const l = '';
 ```
 </div>
