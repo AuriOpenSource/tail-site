@@ -22,7 +22,9 @@
 		);
 	}
 </script>
-
+<svelte:head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+</svelte:head>
 <header>
 	<Navrail fab on:fab-click={updateThemeOnFab} currentPath={data.currentPath} items={routes} />
 	<BottomAppbar currentPath={data.currentPath} items={routes} />

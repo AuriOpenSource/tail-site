@@ -8,12 +8,18 @@ categories:
 published: true
 ---
 
+<script>
+  import Component from '$lib/utils/Component.svelte';
+  import {replace} from '$lib/utils/actions.js';
+</script>
+
 ## Markdown
 
 Hey friends! 👋
 
-```ts
-function greet(name: string) {
-	console.log(`Hey ${name}! 👋`)
-}
-```
+<Component title="Button">
+  <button class="btn">Button</button>
+<pre slot="html" use:replace={{ to: $prefix }}>{
+`<button class="$$btn">Button</button>`
+}</pre>
+</Component>
