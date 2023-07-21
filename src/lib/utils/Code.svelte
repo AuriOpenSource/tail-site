@@ -25,8 +25,6 @@
 	afterUpdate(() => {
 		highlightCode();
 	});
-
-	console.log($$props);
 </script>
 
 <code bind:this={element} style="display:none">

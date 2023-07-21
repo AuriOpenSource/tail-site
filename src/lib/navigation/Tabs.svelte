@@ -14,31 +14,31 @@
 	let activeItem = 0;
 	function tab(e: MouseEvent) {
 		const el = e.target as HTMLElement;
+		console.log(el);
 		dispatch('navigate', { item: parseInt(el.id) });
 		activeItem = parseInt(el.id);
 	}
 </script>
 
 <div
-	class="relative border-b-2 border-surface-variant inline-flex {style}"
+	class="relative rounded-tr-md border-b border-surface-variant inline-flex max-w-[50%] {style}"
 	{...extraWrapperOptions}
 >
 	{#each items as item, i}
-		<button on:click={tab}>
-			<div class="item" class:icon={item.primaryIcon}>
+		<button class="w-full" on:click={tab}>
+			<div id={String(i)} class="item" class:icon={item.primaryIcon}>
 				{#if item.primaryIcon}
 					<Icon d={item.primaryIcon} />
 				{/if}
 				<span id={String(i)} class="text-title-small">{item.name}</span>
 			</div>
 		</button>
-		<!-- <input type="radio" {name} {id} value={i} bind:group={activeItem} {...extraInputOptions} /> -->
 	{/each}
 	<div
 		class="absolute bottom-0 transition-all duration-200"
 		style="left: {(100 / items.length) * activeItem}%; width: {100 / items.length}%;"
 	>
-		<div class="bg-primary" />
+		<div class="bg-primary h-1 rounded-t" />
 	</div>
 </div>
 

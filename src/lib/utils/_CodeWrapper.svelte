@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher, onMount } from 'svelte';
 	import type Code__SvelteComponent_ from './Code.svelte';
-	import { htmlToJsx } from './actions';
-
+	import {slide} from 'svelte/transition'
 	let Code: typeof Code__SvelteComponent_;
 	let init = false;
 	onMount(async () => {
@@ -27,10 +26,9 @@
 </script>
 
 {#if showContent === 'preview'}
-	<div class="bg-surface rounded relative overflow-x-auto">
+	<div transition:slide={{axis: 'y'}} class="bg-surface relative overflow-x-auto">
 		<div
-			class="preview border-base-300 bg-base-100 rounded-b-box rounded-tr-box flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4 {classes}"
-			style={bg ? `background-image: url(${bg})` : ``}
+			class="flex min-h-[6rem] min-w-[18rem] flex-wrap gap-2 overflow-x-hidden p-2 {classes}"
 			class:resize-x={responsive}
 		>
 			<slot />
