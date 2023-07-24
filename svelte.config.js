@@ -1,17 +1,23 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
-import { mdsvex, escapeSvelte } from 'mdsvex';
-import { createShikiHighlighter } from 'shiki-twoslash'
-import remarkUnwrapImages from 'remark-unwrap-images'
-import remarkToc from 'remark-toc'
-import rehypeSlug from 'rehype-slug'
+import { escapeSvelte, mdsvex } from 'mdsvex';
+import rehypeCodeTitle from 'rehype-code-titles';
+import rehypePrismPlus from 'rehype-prism-plus';
+import parseHtmlAndMarkdown from 'rehype-raw';
+import rehypeSlug from 'rehype-slug';
+import remarkGFM from 'remark-gfm';
+import remarkToc from 'remark-toc';
+import remarkUnwrapImages from 'remark-unwrap-images';
+import { createShikiHighlighter } from 'shiki-twoslash';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
   extensions: ['.md'],
   smartypants: true,
-  remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
-  rehypePlugins: [rehypeSlug],
+  // @ts-expect-error sss
+  remarkPlugins: [remarkGFM, remarkUnwrapImages, [remarkToc, { tight: true }]],
+  // @ts-expect-error sss
+  rehypePlugins: [parseHtmlAndMarkdown, rehypeSlug, rehypeCodeTitle, rehypePrismPlus],
   highlight: {
     highlighter: async (code, lang) => {
       const highlighter = await createShikiHighlighter({ theme: 'github-dark' });

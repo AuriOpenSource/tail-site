@@ -1,6 +1,7 @@
 <script lang="ts">
     import type {PageData} from './$types.js'
     import Card from '$lib/containment/Card.svelte';
+    import '../../blog.css';
     export let data: PageData;
 </script>
 

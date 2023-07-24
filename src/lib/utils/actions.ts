@@ -1,25 +1,30 @@
+interface ReplaceParameters {
+	search: '$$' | string;
+	to: string;
+}
+
 export function replace(node: HTMLElement, parameters = {}) {
 	const originalContent = node.textContent ?? '';
-	const defaultParameters = {
+	const defaultParameters: ReplaceParameters = {
 		search: '$$',
 		to: ''
 	};
 
-	function update(p) {
+	function update(p: ReplaceParameters) {
 		const { search, to } = {
 			...defaultParameters,
 			...p
 		};
-		node.textContent = originalContent.replaceAll(search, to);
+		node.textContent = originalContent.replaceAll(search, to).trim();
 	}
 
-	update(parameters);
+	update(parameters as ReplaceParameters);
 
 	return {
 		update
 	};
 }
-export function htmlToJsx(node) {
+export function htmlToJsx(node: HTMLElement) {
 	const originalContent = node.textContent ?? '';
 
 	const stringsToReplace = {
@@ -225,7 +230,7 @@ export function htmlToJsx(node) {
 	const re = new RegExp(Object.keys(stringsToReplace).join('|'), 'gi');
 
 	function update() {
-		node.textContent = originalContent.replace(re, function (matched) {
+		node.textContent = originalContent.replace(re, (matched) => {
 			return stringsToReplace[matched.toLowerCase()];
 		});
 	}

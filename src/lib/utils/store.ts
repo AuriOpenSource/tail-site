@@ -1,3 +1,2 @@
-import { writable } from "svelte/store";
-
-export const prefix = writable("")
+import { writable } from 'svelte/store';
+export const prefix = writable('');

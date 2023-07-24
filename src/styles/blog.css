@@ -1,0 +1,120 @@
+.prose header {
+    @apply my-32 text-center;
+}
+
+.prose h1 {
+    @apply text-primary text-headline-large;
+}
+
+.prose h2 {
+    @apply text-primary-container text-headline-medium;
+}
+
+
+.prose h3 {
+    @apply text-primary-container text-headline-small;
+}
+
+/* no one has to know 🤫 */
+.prose #table-of-contents + ul a {
+    text-decoration: none;
+    font-weight: inherit;
+}
+
+.prose p > a,
+.prose li > a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.prose p,
+.prose li {
+    font-size: var(--post-txt-size);
+    line-height: var(--post-txt-height);
+}
+
+.prose iframe,
+.prose video,
+.prose pre,
+.prose .rehype-code-title {
+    @apply max-w-2xl
+}
+
+.prose img {
+    justify-self: center;
+    grid-column: gutter-start / gutter-end;
+}
+
+.prose img,
+.prose iframe,
+.prose video,
+.prose p,
+.prose ul,
+.prose ol,
+.prose pre,
+.prose blockquote,
+.prose details {
+    margin-bottom: var(--spacing-32);
+}
+
+.prose li > ul {
+    margin-bottom: 0;
+}
+
+.prose ul,
+.prose ol {
+    display: grid;
+    row-gap: var(--spacing-8);
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+.prose ul li::before {
+    content: '🔥';
+    padding-right: var(--spacing-8);
+}
+
+.prose li > ul {
+    margin-top: var(--spacing-8);
+    padding-left: var(--spacing-16);
+}
+
+.prose li > ul > li {
+    list-style-type: circle;
+}
+
+.prose li > ul > li::before {
+    content: none;
+}
+
+.prose ol {
+    list-style-type: decimal;
+}
+
+.prose li > ol {
+    margin-top: var(--spacing-8);
+    padding-left: var(--spacing-16);
+}
+
+.prose blockquote {
+    padding: var(--spacing-32);
+    color: var(--post-blockquote-txt);
+    background-color: var(--post-blockquote-bg);
+    border: 1px solid var(--post-blockquote-border);
+    border-top: 4px solid rgb(var(--color-primary));
+    border-radius: var(--rounded-20);
+    box-shadow: var(--shadow-sm);
+}
+
+.prose blockquote p {
+    margin-bottom: 0;
+}
+
+.prose details summary {
+    margin-bottom: var(--spacing-8);
+    font-weight: 700;
+}
+
+.prose {
+    @apply flex flex-col gap-2 items-center
+}

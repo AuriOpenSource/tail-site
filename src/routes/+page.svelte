@@ -22,22 +22,28 @@
 	</h3>
 </Card> -->
 
-<Component title="Button">
-	<button class="btn">Button</button>
-	<pre slot="html" use:replace={{ to: $prefix }}>{`<button class="$$btn">Button</button>`}</pre>
-</Component>
+<div class="grid gap-2">
+	<Component title="Button">
+		<button class="btn">Button</button>
+		<pre slot="html" use:replace={{ to: $prefix }}>{`<button class="$$btn">Button</button>`}</pre>
+	</Component>
 
-<Component title="Buttons with brand colors">
-	<button class="btn">Button</button>
-	<button class="btn btn-filled">Neutral</button>
-	<button class="btn btn-outlined">Primary</button>
-	<button class="btn interactive-bg-tertiary">Custom</button>
-	<pre slot="html" use:replace={{ to: $prefix }}>{`<button class="$$btn">Button</button>
-		<button class="$$btn $$btn-neutral">Neutral</button>
-		<button class="$$btn $$btn-primary">Button</button>
-		<button class="$$btn $$btn-secondary">Button</button>
-		<button class="$$btn $$btn-accent">Button</button>
-		<button class="$$btn $$btn-ghost">Button</button>
-		<button class="$$btn $$btn-link">Button</button>
-	`}</pre>
-</Component>
+	<Component title="Buttons with brand colors">
+		<button class="btn">Button Structure</button>
+		<button class="btn btn-filled">Filled</button>
+		<button class="btn btn-outlined">Outlined</button>
+		<button class="btn interactive-bg-tertiary">Custom</button>
+		<pre slot="html" use:replace={{ to: $prefix }}>{
+		`<button class="btn">Button Structure</button>
+		<button class="btn btn-filled">Filled</button>
+		<button class="btn btn-outlined">Outlined</button>
+		<button class="btn interactive-bg-tertiary">Custom</button>`
+		}</pre>
+	</Component>
+</div>
+
+<style>
+	div.grid {
+		grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+	}
+</style>

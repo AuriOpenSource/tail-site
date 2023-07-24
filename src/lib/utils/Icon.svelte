@@ -1,5 +1,10 @@
 <script lang="ts">
-	export let d: string;
+	interface Polygon {
+		d: string;
+		points: string;
+	}
+
+	export let d: string | Polygon = '';
 	export let width = 24;
 	export let height = width;
 </script>
@@ -10,5 +15,12 @@
 	width={width + 'px'}
 	viewBox="0 0 24 24"
 >
-	<path {d} />
+	{#if typeof d === 'string'}
+		<path {d} />
+	{:else}
+		<g>
+			<path d={d.d} />
+			<polygon points={d.points} />
+		</g>
+	{/if}
 </svg>

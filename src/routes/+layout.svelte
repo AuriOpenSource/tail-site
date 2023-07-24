@@ -4,7 +4,7 @@
 	import routes from '$lib/routes.js';
 	import '@fontsource/roboto/400.css';
 	import '@fontsource/roboto/500.css';
-	import '../app.css';
+	import '../styles/app.css';
 	import type { LayoutData } from './$types.js';
 	//@ts-ignore
 	import { updateTheme } from 'tailwind-material-colors/lib/updateTheme.esm.js';

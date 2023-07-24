@@ -1,9 +1,8 @@
 <script lang="ts">
-    import type {PageData} from './$types.js'
-    export let data: PageData;
-    
-    console.log(data);
-    
+	import type { PageData } from './$types';
+	export let data: PageData;
+
+	console.log(data);
 </script>
 
 <svelte:head>
@@ -12,4 +11,6 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<svelte:component this={data.content} />
+<article class="prose">
+	<svelte:component this={data.content} />
+</article>

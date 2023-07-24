@@ -1,5 +1,5 @@
-import {withMaterialColors} from 'tailwind-material-colors';
-import tail from '../tail-material-design/src/index'
+import { withMaterialColors } from 'tailwind-material-colors';
+import tail from '../tail-material-design/src/index';
 export default withMaterialColors(
 	{
 		content: ['./src/**/*.{html,js,svelte,ts}'],
