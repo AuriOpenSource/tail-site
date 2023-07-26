@@ -5,7 +5,8 @@
 	export let outlined = false;
 	export let height = '';
 	export let href: string | null = null;
-	export let backgroundImage: string | null = null;
+	export let backgroundImage = '';
+	export let backgroundColor = '';
 	export let extraclasses = '';
 
 	let tag = isLink ? 'a' : 'section';
@@ -20,7 +21,7 @@
 <svelte:element
 	this={tag}
     {...isLink ? a : {}}
-	style="background-image: url({backgroundImage});"
+	style="background-image: url({backgroundImage}); background-color: {backgroundColor}"
 	style:height
 	class="card {extraclasses}"
 	class:card-filled={filled}

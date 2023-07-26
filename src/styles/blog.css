@@ -1,9 +1,19 @@
-.prose header {
+.prose hgroup {
     @apply my-32 text-center;
 }
 
 .prose h1 {
-    @apply text-primary text-headline-large;
+    @apply text-primary text-headline-large transition-all duration-200 relative;
+}
+
+.prose h1::before {
+    content: url('https://m3.material.io/static/assets/list-bullet-dark.svg');
+    @apply transform -translate-y-[36%] absolute top-1/2 -left-6;
+}
+
+.prose h1:hover::before {
+    content: url('https://m3.material.io/static/assets/list-bullet-dark.svg');
+    @apply transform;
 }
 
 .prose h2 {
@@ -29,8 +39,7 @@
 
 .prose p,
 .prose li {
-    font-size: var(--post-txt-size);
-    line-height: var(--post-txt-height);
+    @apply text-body-medium;
 }
 
 .prose iframe,
@@ -54,7 +63,7 @@
 .prose pre,
 .prose blockquote,
 .prose details {
-    margin-bottom: var(--spacing-32);
+    @apply mb-8;
 }
 
 .prose li > ul {
@@ -70,17 +79,13 @@
 }
 
 .prose ul li::before {
-    content: '🔥';
-    padding-right: var(--spacing-8);
+    content: url('https://m3.material.io/static/assets/list-bullet-dark.svg');
+    @apply pr-3; 
 }
 
 .prose li > ul {
     margin-top: var(--spacing-8);
     padding-left: var(--spacing-16);
-}
-
-.prose li > ul > li {
-    list-style-type: circle;
 }
 
 .prose li > ul > li::before {
@@ -116,5 +121,5 @@
 }
 
 .prose {
-    @apply flex flex-col gap-2 items-center
+    @apply flex flex-col gap-4 items-center
 }

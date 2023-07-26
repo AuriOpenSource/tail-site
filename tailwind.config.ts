@@ -7,7 +7,7 @@ export default withMaterialColors(
 		theme: {
 			extend: {
 				fontFamily: {
-					sans: 'Roboto'
+					sans: 'Roboto, sans-serif'
 				}
 			},
 			fontSize: {

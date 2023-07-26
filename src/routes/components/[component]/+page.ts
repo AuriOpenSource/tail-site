@@ -1,12 +1,11 @@
-import type { ComponentsFM } from '$lib/utils/types.js';
-import type { SvelteComponent } from 'svelte';
+import type { Component } from '$lib/utils/types.js';
 import type { PageLoad } from './$types.js';
 
-export const load = (async ({ params }) => {
-	const comp = await import(`../../../docs/${params.component}.md`);
-
+export const load = (async ({ params, fetch }) => {
+	const res = await fetch('/api/components/' + params.component);
+	const {content, frontmatter} = await res.json();
 	return {
-		content: comp.default as SvelteComponent,
-		meta: comp.metadata as ComponentsFM
+		content: content as string,
+		frontmatter: frontmatter as Component
 	};
 }) satisfies PageLoad;

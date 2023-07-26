@@ -7,7 +7,8 @@
 	export let icon: string | null = null;
 	export let color: 'primary' | 'secondary' | 'tertiary' = 'primary';
 	export let href: string | null = null;
-	let element = isLink ? 'a' : 'button';
+	export let extraClasses = ''
+	let element = (isLink || href) ? 'a' : 'button';
 
 	const a = {
         href,
@@ -18,8 +19,8 @@
 
 <svelte:element
 	this={element}
-	{...isLink ? a : {}}
-	class="btn text-label-large fill-on-{color} interactive-bg-{color}"
+	{...(isLink || href) ? a : {}}
+	class="btn text-label-large fill-on-{color} interactive-bg-{color} {extraClasses}"
 	class:icon-left={icon}
     class:w-full={isBlock}
 >
