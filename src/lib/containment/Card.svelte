@@ -20,7 +20,7 @@
 
 <svelte:element
 	this={tag}
-    {...isLink ? a : {}}
+	{...isLink ? a : {}}
 	style="background-image: url({backgroundImage}); background-color: {backgroundColor}"
 	style:height
 	class="card {extraclasses}"

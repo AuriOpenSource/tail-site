@@ -14,19 +14,19 @@ async function parseMarkdownFiles() {
 	try {
 		const posts: ComponentsFM[] = [];
 		const postsPath = resolve('src/docs');
-        
+
 		const folders = await readdir(postsPath);
-        
+
 		for (const folder of folders) {
-            const markdownFilePath = join(postsPath, folder);
+			const markdownFilePath = join(postsPath, folder);
 			const markdownContent = await readFile(markdownFilePath, 'utf-8');
 			const { data } = matter(markdownContent);
-            
+
 			if (data.published) {
 				posts.push(data as ComponentsFM);
 			}
 		}
-                
+
 		return posts;
 	} catch (e) {
 		throw new Error(e);

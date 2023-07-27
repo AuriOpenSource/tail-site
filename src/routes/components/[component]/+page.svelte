@@ -20,7 +20,6 @@
 	});
 </script>
 
-
 <svelte:head>
 	<title>{data.frontmatter.title}</title>
 	<meta property="og:type" content="article" />
@@ -44,7 +43,7 @@
 <ul class="capitalize flex flex-row gap-1 w-full justify-center my-4">
 	{#each ['overview', 'specs', 'guidelines', 'accessibility'] as hashes}
 		<li>
-			<Button href={'#'+hashes} extraClasses="interactive-bg-primary-container" >{hashes}</Button>
+			<Button href={'#' + hashes} extraClasses="interactive-bg-primary-container">{hashes}</Button>
 		</li>
 	{/each}
 </ul>

@@ -26,7 +26,7 @@
 				</button>
 			{/if}
 			{#if fab}
-				<Fab on:click={(event) => dispatch('fab-click',  event)} />
+				<Fab on:click={(event) => dispatch('fab-click', event)} />
 			{/if}
 		</section>
 	{/if}
@@ -52,8 +52,6 @@
 			</a>
 		{/each}
 	</ul>
-
-	
 </nav>
 
 <style>

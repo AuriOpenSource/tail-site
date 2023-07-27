@@ -18,7 +18,13 @@ export interface NavrailTypes {
 	chosen: NavrailType;
 }
 
-type Categories = 'action' | 'containment' | 'communication' | 'navigation' | 'slection' | 'textInputs';
+type Categories =
+	| 'action'
+	| 'containment'
+	| 'communication'
+	| 'navigation'
+	| 'slection'
+	| 'textInputs';
 export interface ComponentsFM {
 	title: string;
 	slug: string;

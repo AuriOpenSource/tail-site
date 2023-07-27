@@ -4,6 +4,8 @@
 	import routes from '$lib/routes.js';
 	import '@fontsource/roboto/400.css';
 	import '@fontsource/roboto/500.css';
+	import '@fontsource/fira-code/400.css';
+	import '@fontsource/fira-code/500.css';
 	import '../styles/app.css';
 	import type { LayoutData } from './$types.js';
 	//@ts-ignore
@@ -22,8 +24,12 @@
 		);
 	}
 </script>
+
 <svelte:head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css"
+	/>
 </svelte:head>
 <header>
 	<Navrail fab on:fab-click={updateThemeOnFab} currentPath={data.currentPath} items={routes} />

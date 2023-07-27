@@ -12,29 +12,29 @@ import { createShikiHighlighter } from 'shiki-twoslash';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
-  extensions: ['.md'],
-  smartypants: true,
-  // @ts-expect-error sss
-  remarkPlugins: [remarkGFM, remarkUnwrapImages, [remarkToc, { tight: true }]],
-  // @ts-expect-error sss
-  rehypePlugins: [parseHtmlAndMarkdown, rehypeSlug, rehypeCodeTitle, rehypePrismPlus],
-  highlight: {
-    highlighter: async (code, lang) => {
-      const highlighter = await createShikiHighlighter({ theme: 'github-dark' });
+	extensions: ['.md'],
+	smartypants: true,
+	// @ts-expect-error sss
+	remarkPlugins: [remarkGFM, remarkUnwrapImages, [remarkToc, { tight: true }]],
+	// @ts-expect-error sss
+	rehypePlugins: [parseHtmlAndMarkdown, rehypeSlug, rehypeCodeTitle, rehypePrismPlus],
+	highlight: {
+		highlighter: async (code, lang) => {
+			const highlighter = await createShikiHighlighter({ theme: 'github-dark' });
 
-      const html = escapeSvelte(highlighter.codeToHtml(code, { lang }));
+			const html = escapeSvelte(highlighter.codeToHtml(code, { lang }));
 
-      return `{@html \`${html}\` }`
-    }
-  }
-}
+			return `{@html \`${html}\` }`;
+		}
+	}
+};
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', '.md'],
-  kit: {
-    adapter: adapter()
-  },
-  preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)]
+	extensions: ['.svelte', '.md'],
+	kit: {
+		adapter: adapter()
+	},
+	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)]
 };
 export default config;
