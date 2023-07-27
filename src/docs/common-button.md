@@ -104,7 +104,7 @@ posterImage: https://lh3.googleusercontent.com/fCsle0V-T05FQjTzgyi3I6xQHlMcMYmyM
 
 ### Usage 
 
-Buttons communicate actions that users can take.<br/>
+Buttons communicate actions that users can take.
 They are typically placed throughout your UI, in places like:
 
 - Dialogs
@@ -113,7 +113,8 @@ They are typically placed throughout your UI, in places like:
 - Cards
 - Toolbars
 
-Buttons are just one option for representing actions in a product and shouldn’t be overused. Too many buttons on a screen disrupts the visual hierarchy.
+Buttons are just one option for representing actions in a product and shouldn’t be overused. 
+Too many buttons on a screen disrupts the visual hierarchy.
 
 Consider placing additional actions in a [navigation drawer](/components/navigation-drawer), 
 set of [chips](/components/chips), text links, or [icon buttons](/components/icon-buttons).
