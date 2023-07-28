@@ -6,7 +6,7 @@
 	//@ts-expect-error no d.ts
 	import { updateTheme } from 'tailwind-material-colors/lib/updateTheme.esm';
 	import type { PageData } from './$types';
-	
+
 	export let data: PageData;
 	const { content, frontmatter } = data;
 	onMount(() => {

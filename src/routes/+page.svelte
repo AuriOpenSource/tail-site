@@ -1,15 +1,11 @@
 <script lang="ts">
 	import Card from '$lib/containment/Card.svelte';
+	import Code from '$lib/utils/Code.svelte';
 	const img =
 		'https://lh3.googleusercontent.com/BvKj8kuRZqLpqPuuZxOl4IeHv5jaD5kT1jhn3P8EMBcmzyoHRAFXsCxNH6ZeHhQG4V1F_AegXIw2cJIBmETy7eHM27IdLQe7FqEgz6NLaXflHiHM4xyh=w2400-rj';
 </script>
 
-<Card
-	backgroundImage={img}
-	class="items-center justify-center bg-cover"
-	filled
-	height={'70dvh'}
->
+<Card backgroundImage={img} class="items-center justify-center bg-cover" filled height={'70dvh'}>
 	<h1 class="text-display-large text-primary transition-colors duration-1000">
 		Tail Material Design
 	</h1>
@@ -18,3 +14,10 @@
 		beautiful, usable products with Material 3.
 	</h3>
 </Card>
+
+<Code
+	lang="svelte"
+	source={`<button class="btn btn-filled">Filled</button>
+<button class="btn btn-outlined">Outined</button>
+<button class="btn bg-teal-500 bg-teal-950">Custom</button>`}
+/>
