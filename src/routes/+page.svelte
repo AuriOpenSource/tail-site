@@ -6,7 +6,7 @@
 
 <Card
 	backgroundImage={img}
-	extraclasses="items-center justify-center bg-cover"
+	class="items-center justify-center bg-cover"
 	filled
 	height={'70dvh'}
 >
@@ -14,7 +14,7 @@
 		Tail Material Design
 	</h1>
 	<h3 class="text-headline-small text-center">
-		Material 3 is the latest version of Google’s open-source design system. Design and build
+		Material 3 is the latest version of Google's open-source design system. Design and build
 		beautiful, usable products with Material 3.
 	</h3>
 </Card>

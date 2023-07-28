@@ -14,9 +14,9 @@ async function parseMarkdownFiles() {
 	try {
 		const posts: ComponentsFM[] = [];
 		const postsPath = resolve('src/docs');
-
+		
 		const folders = await readdir(postsPath);
-
+		
 		for (const folder of folders) {
 			const markdownFilePath = join(postsPath, folder);
 			const markdownContent = await readFile(markdownFilePath, 'utf-8');

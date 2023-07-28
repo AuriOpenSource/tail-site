@@ -1,13 +1,11 @@
 import type { ComponentsFM } from '$lib/utils/types.js';
-import type { PageLoad } from './$types';
-
+import type { PageServerLoad } from './$types';
+import { resolve } from 'path';
+import { readFile } from 'fs/promises';
 export const prerender = true;
 
-export const load = (async ({ fetch }) => {
-	const response = await fetch('/api/components');
-	const components = (await response.json()) as ComponentsFM[];
-
-	console.log(components);
-
-	return { components };
-}) satisfies PageLoad;
+export const load = (async () => {
+	const metaPath = resolve('./src/meta.json');
+	const meta = await readFile(metaPath, { encoding: 'utf-8' });
+	return { components: JSON.parse(meta) as ComponentsFM[] };
+}) satisfies PageServerLoad;
