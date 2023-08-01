@@ -6,6 +6,7 @@
 	//@ts-expect-error no d.ts
 	import { updateTheme } from 'tailwind-material-colors/lib/updateTheme.esm';
 	import type { PageData } from './$types';
+	import Code from '$lib/utils/Code.svelte';
 
 	export let data: PageData;
 	const { content, frontmatter } = data;
@@ -51,6 +52,49 @@
 		{/each}
 	</ul>
 </section>
+
+<Code
+	source={`
+<button class="btn btn-filled icon-left">
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		height="24px"
+		viewBox="0 0 24 24"
+		width="24px"
+		fill="#000000"
+	>
+		<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+	</svg>
+	Filled
+</button>
+
+<button class="btn btn-outlined icon-left">
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		height="24px"
+		viewBox="0 0 24 24"
+		width="24px"
+		fill="#000000"
+	>
+		<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+	</svg>
+	Outlined
+</button>
+
+<button class="btn bg-teal-500 bg-teal-950 icon-left">
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		height="24px"
+		viewBox="0 0 24 24"
+		width="24px"
+		fill="#000000"
+	>
+		<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+	</svg>
+	Custom
+</button>
+`}
+/>
 
 <article class="prose">
 	{@html content}

@@ -14,10 +14,3 @@
 		beautiful, usable products with Material 3.
 	</h3>
 </Card>
-
-<Code
-	lang="svelte"
-	source={`<button class="btn btn-filled">Filled</button>
-<button class="btn btn-outlined">Outined</button>
-<button class="btn bg-teal-500 bg-teal-950">Custom</button>`}
-/>

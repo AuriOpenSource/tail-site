@@ -77,6 +77,9 @@ devDependencies:
   mdsvex:
     specifier: ^0.11.0
     version: 0.11.0(svelte@4.1.1)
+  memoize-one:
+    specifier: ^6.0.0
+    version: 6.0.0
   postcss:
     specifier: ^8.4.27
     version: 8.4.27
@@ -2574,6 +2577,10 @@ packages:
       prismjs: 1.29.0
       svelte: 4.1.1
       vfile-message: 2.0.4
+    dev: true
+
+  /memoize-one@6.0.0:
+    resolution: {integrity: sha512-rkpe71W0N0c0Xz6QD0eJETuWAJGnJ9afsl1srmwPrI+yBCkge5EycXXbYRyvL29zZVUWQCY7InPRCv3GDXuZNw==}
     dev: true
 
   /merge2@1.4.1:

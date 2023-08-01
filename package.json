@@ -39,6 +39,7 @@
 		"magic-string": "^0.30.2",
 		"marked": "^5.1.2",
 		"mdsvex": "^0.11.0",
+		"memoize-one": "^6.0.0",
 		"postcss": "^8.4.27",
 		"postcss-import": "^15.1.0",
 		"prettier": "^2.8.8",
