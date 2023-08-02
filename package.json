@@ -2,7 +2,7 @@
 	"name": "tail-site",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepublishOnly": "npm run package",
@@ -33,7 +33,7 @@
 		"eslint": "^8.45.0",
 		"eslint-config-prettier": "^8.9.0",
 		"eslint-plugin-svelte": "^2.32.4",
-		"ez-icons": "link:..\\ez-icons",
+		"ez-icons": "link:../ez-icons",
 		"gray-matter": "^4.0.3",
 		"hast": "^1.0.0",
 		"magic-string": "^0.30.2",

@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -60,7 +60,7 @@ devDependencies:
     specifier: ^2.32.4
     version: 2.32.4(eslint@8.45.0)(svelte@4.1.1)
   ez-icons:
-    specifier: link:..\ez-icons
+    specifier: link:../ez-icons
     version: link:../ez-icons
   gray-matter:
     specifier: ^4.0.3

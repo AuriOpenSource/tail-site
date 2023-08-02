@@ -14,3 +14,10 @@
 		beautiful, usable products with Material 3.
 	</h3>
 </Card>
+
+<Code
+	source={`
+	// index.html
+<div> helo world</div> 
+	`}
+/>
