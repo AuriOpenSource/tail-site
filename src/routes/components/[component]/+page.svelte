@@ -96,6 +96,11 @@
 `}
 />
 
+<Code source={`
+// index.html
+<div>hello </div>
+`}
+/>
 <article class="prose">
 	{@html content}
 </article>

@@ -12,9 +12,7 @@
 	export let fab = false;
 	export let currentPath: string | null = null;
 
-	onMount(() => {
-		if (fab) handleScroll(navbar, fabEle);
-	});
+	onMount(() => handleScroll(navbar, fabEle));
 </script>
 
 <nav class="bottom-appbar">

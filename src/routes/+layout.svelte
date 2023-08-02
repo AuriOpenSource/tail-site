@@ -36,6 +36,6 @@
 	<BottomAppbar currentPath={data.currentPath} items={routes} />
 </header>
 
-<main class="flex-1 p-1 min-h-[100dvh]">
+<main class="flex-1 p-2 min-h-[100dvh]">
 	<slot />
 </main>

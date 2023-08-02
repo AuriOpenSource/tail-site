@@ -1,24 +1,28 @@
-import { getHighlighter, setCDN, setWasm } from 'shiki';
+import { getHighlighter, setCDN, setWasm, type IThemeRegistration, type Lang } from 'shiki';
 
+interface Code {
+	source: string;
+	lang: Lang;
+	theme: IThemeRegistration;
+}
 
-self.addEventListener('message', async (e) => {
-    const { source, lang, theme } = e.data;
+addEventListener('message', async (e: MessageEvent<Code>) => {
+	const { source, lang, theme } = e.data;
+	let code = '';
 
-    let code = '';
+	const res = await fetch(
+		'https://cdn.jsdelivr.net/gh/microsoft/vscode-oniguruma@1.7.0/out/onig.wasm'
+	);
+	setWasm(res);
+	setCDN('https://cdn.jsdelivr.net/gh/shikijs/shiki@0.14.3/packages/shiki/');
 
-    const res = await fetch(
-        'https://cdn.jsdelivr.net/gh/microsoft/vscode-oniguruma@1.7.0/out/onig.wasm'
-    );
+	const highlighter = await getHighlighter({
+		theme,
+		langs: ['html', 'css']
+	});
+	code = highlighter.codeToHtml(source.trim(), {
+		lang
+	});
 
-    setCDN('https://cdn.jsdelivr.net/gh/shikijs/shiki@0.14.3/packages/shiki/');
-
-    setWasm(res);
-    const highlighter = await getHighlighter({
-        theme,
-        langs: ['html', 'css']
-    });
-    code = highlighter.codeToHtml(source.trim(), lang);
-
-
-    self.postMessage(code);
-})
+	postMessage(code);
+});
