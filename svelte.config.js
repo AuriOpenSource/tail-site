@@ -1,32 +1,18 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
-import { escapeSvelte, mdsvex } from 'mdsvex';
-import rehypeCodeTitle from 'rehype-code-titles';
-import rehypePrismPlus from 'rehype-prism-plus';
-import parseHtmlAndMarkdown from 'rehype-raw';
-import rehypeSlug from 'rehype-slug';
-import remarkGFM from 'remark-gfm';
+import { mdsvex } from 'mdsvex';
+import remarkGfm from 'remark-gfm';
+import remarkSlug from 'remark-slug';
+import remarkSmartypants from 'remark-smartypants';
 import remarkToc from 'remark-toc';
-import remarkUnwrapImages from 'remark-unwrap-images';
-import { createShikiHighlighter } from 'shiki-twoslash';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
-	extensions: ['.md'],
-	smartypants: true,
-	// @ts-expect-error sss
-	remarkPlugins: [remarkGFM, remarkUnwrapImages, [remarkToc, { tight: true }]],
-	// @ts-expect-error sss
-	rehypePlugins: [parseHtmlAndMarkdown, rehypeSlug, rehypeCodeTitle, rehypePrismPlus],
-	highlight: {
-		highlighter: async (code, lang) => {
-			const highlighter = await createShikiHighlighter({ theme: 'github-dark' });
-
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang }));
-
-			return `{@html \`${html}\` }`;
-		}
-	}
+	extensions: ['.md', '.mdx'],
+	layout: {
+		_: './src/mdsvex.svelte'
+	},
+	remarkPlugins: [remarkGfm, remarkSlug, remarkSmartypants, [remarkToc, { tight: true }]],
 };
 
 /** @type {import('@sveltejs/kit').Config} */

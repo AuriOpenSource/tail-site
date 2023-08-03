@@ -9,12 +9,16 @@
 		@apply my-32 text-center;
 	}
 
+	& h1, & h2, & h3 {
+		@apply scroll-mt-4;
+	}
+
 	& h1 {
 		@apply text-primary text-left text-headline-large;
 	}
 
 	& h2 {
-		@apply text-tertiary text-headline-medium;
+		@apply text-secondary text-headline-medium;
 	}
 
 	& h3 {
@@ -34,7 +38,8 @@
 	}
 
 	& p,
-	& li {
+	& li,
+	& figcaption {
 		@apply text-body-medium;
 	}
 
@@ -46,7 +51,7 @@
 	}
 
 	& img {
-		justify-self: center;
+		@apply rounded-xl
 	}
 
 	& li > ul {

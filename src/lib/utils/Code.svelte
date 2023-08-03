@@ -9,7 +9,6 @@
 
 	let worker: Worker;
 	let code = '';
-	let init = false;
 
 	function initShiki() {
 		worker = new codeworker();
@@ -19,12 +18,10 @@
 			lang,
 			theme
 		});
-
-		init != init;
 	}
 	onMount(initShiki);
 </script>
 
-<div class="code-wrap md:max-w-[60dvw] {init ? 'grid-rows-[0fr]' : 'grid-rows-1'}">
+<div class="code-wrap md:max-w-[60dvw] min-h-[5rem]">
 	{@html code}
 </div>

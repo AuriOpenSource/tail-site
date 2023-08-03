@@ -38,3 +38,15 @@ export interface ComponentsFM {
 }
 
 export type Component = Omit<ComponentsFM, 'slug' | 'thumbImage'>;
+
+export interface Metadata {
+	title: string;
+	description: string;
+	slug: string;
+	lastUpdate: string;
+	category: string;
+	published: boolean;
+	color: string;
+	thumbImage: string;
+	posterImage: string;
+}

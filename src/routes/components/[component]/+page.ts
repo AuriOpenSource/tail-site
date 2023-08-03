@@ -1,14 +1,10 @@
-import type { Component } from '$lib/utils/types.js';
 import type { PageLoad } from './$types.js';
 
-export const load = (async ({ params, fetch, parent }) => {
-	const {components} = await parent();
-	console.log(components);
-	
-	const res = await fetch('/api/components/' + params.component);
-	const { content, frontmatter } = await res.json();
+export const load = (async ({ params, fetch, parent, url }) => {
+	const docs = await import(`../../../docs/${params.component}.md`);
+
 	return {
-		content: content as string,
-		frontmatter: frontmatter as Component
+		content: docs.default,
+		frontmatter: docs.metadata
 	};
 }) satisfies PageLoad;

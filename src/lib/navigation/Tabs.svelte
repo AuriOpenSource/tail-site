@@ -21,7 +21,7 @@
 </script>
 
 <div
-	class="relative rounded-t-md border-b border-surface-variant inline-flex {style}"
+	class="relative rounded-t-md border-b border-surface-variant inline-flex {style} {$$props.class??''}"
 	{...extraWrapperOptions}
 >
 	{#each items as item, i}

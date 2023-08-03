@@ -1,6 +1,5 @@
 .code-wrap {
-	@apply mx-auto grid;
-	transition: grid-template-rows 1s;
+	@apply bg-surface-variant overflow-auto rounded-md;
 
 	& code[class*='language-'],
 	& pre[class*='language-'] {
@@ -20,7 +19,7 @@
 	}
 
 	& pre {
-		@apply my-2 p-4 rounded-md overflow-x-auto;
+		@apply p-4 overflow-x-auto;
 		& .line {
 			@apply transition-colors;
 
@@ -32,10 +31,10 @@
 				@apply mr-4 py-0 pl-4 pr-6 w-4 text-secondary inline-block -ml-2 text-left border-r border-outline;
 				content: counter(step);
 				counter-increment: step;
-				transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition: border 200ms;
 
 				&:hover {
-					@apply border-r-2;
+					@apply border-r-4;
 				}
 			}
 		}
