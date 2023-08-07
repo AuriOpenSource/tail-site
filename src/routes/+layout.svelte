@@ -12,7 +12,7 @@
 	import { updateTheme } from 'tailwind-material-colors/lib/updateTheme.esm.js';
 	export let data: LayoutData;
 
-	function updateThemeOnFab(e: CustomEvent) {
+	function updateThemeOnFab() {
 		const color = Math.floor(Math.random() * 16777215)
 			.toString(16)
 			.padStart(6, '0');

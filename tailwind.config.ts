@@ -49,6 +49,6 @@ export default withMaterialColors(
 		}
 	},
 	{
-		primary: '#fafafa'
+		primary: '#a8c7fa'
 	}
 );

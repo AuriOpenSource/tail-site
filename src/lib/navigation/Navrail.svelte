@@ -2,7 +2,7 @@
 	import Fab from '$lib/action/Fab.svelte';
 	import Icon from '$lib/utils/Icon.svelte';
 	import icon from '$lib/utils/icons.js';
-	import type { NavrailTypes, Routes } from '$lib/utils/types.js';
+	import type { Routes } from '$lib/utils/types.js';
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
@@ -12,10 +12,13 @@
 	export let currentPath: string | null = null;
 	export let items: Routes = [];
 
+	/** Navbar position */
+	export let position: 'center' | 'top' | 'bottom' = 'center';
+
 	let hidden = true;
 </script>
 
-<nav class="navrail hidden md:block" class:relative={menu}>
+<nav class="navrail navrail-{position} hidden md:flex" class:relative={menu}>
 	{#if menu || fab}
 		<section class="fill-on-surface navrail-menu">
 			{#if menu}

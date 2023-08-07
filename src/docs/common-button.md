@@ -29,10 +29,11 @@ Users should be able to:
 
 # Usage
 
-<section class="flex flex-row">
+<section class="flex flex-col md:flex-row gap-4">
   <div class="flex gap-4 flex-col">
     <p>Buttons communicate actions that users can take. They are typically placed throughout your UI, in places like:</p>
 
+    <div class="flex flex-row" style="justify-content: space-around">
     <ul>
       {#each [ 'Dialogs', 'Modal windows','Forms','Cards', 'Toolbars'] as item, i (i)}
         <li>{item}</li>
@@ -41,11 +42,12 @@ Users should be able to:
 
     <div>
       <p>Button Styles:</p>
-      <ul>
+      <ul class="capitalize">
         {#each ['base', 'filled', 'outlined', 'icon'] as item, i (i)}
           <li><a href="#{item}">{item}</a></li>
         {/each}
       </ul>
+    </div>
     </div>
 
   </div>
@@ -83,12 +85,12 @@ Users should be able to:
 <Card filled class="gap-2">
   <h2 id="filled">Filled Button</h2>
 
-  <div class="flex flex-row gap-4">
+  <div class="flex flex-col md:flex-row gap-4">
     <p>
       Filled buttons have the most visual impact after the FAB, and should be used for important, final actions that complete a flow, like Save, Join now, or Confirm.
     </p>
     <figure class="flex flex-col gap-2">
-      <img src="https://lh3.googleusercontent.com/33VllAnWxQv00Wf5vR1gbBPUJTlnx3o1H1RZnppdqzhyY8RyUIf38vgviOlsIoy3rDG6filC0bH4umr8L7hNsOOxP3C1374fn9S50Sj99C8M=s0"/>
+      <img height="252" src="https://lh3.googleusercontent.com/33VllAnWxQv00Wf5vR1gbBPUJTlnx3o1H1RZnppdqzhyY8RyUIf38vgviOlsIoy3rDG6filC0bH4umr8L7hNsOOxP3C1374fn9S50Sj99C8M=s0"/>
       <figcaption>Filled buttons have high visual impact when used for important actions</figcaption>
     </figure>
   </div>
@@ -108,8 +110,8 @@ Users should be able to:
 <Card filled class="gap-2">
   <h2 id="outlined">Outlined Button</h2>
 
-  <div class="flex flex-row gap-4">
-    <div class="flex flex-col gap-2">
+  <div class="flex flex-col md:flex-row gap-4">
+    <div class="flex flex-col gap-2 flex-1">
       <p>
         Outlined buttons are medium-emphasis buttons. They contain actions that are important, but aren’t the primary action in an app.
       </p>
@@ -118,8 +120,8 @@ Users should be able to:
       </p>
       <p>Outlined buttons display a stroke around the button container, and by default have no fill.</p>
     </div>
-    <figure class="flex flex-col gap-2">
-      <img src="https://lh3.googleusercontent.com/Ic_1kNLwDfIHdWKvp-3iKGDkHvjxy0QZvelA_vOgIY6l6DuRTcQ3c9JITapze3F44yiNO67EsyrnJraPQvVsS0HtiBIDmRbdgaABXJHOYo_2=s0"/>
+    <figure class="flex flex-col gap-2 ">
+      <img style="height: 252px; object-fit: cover; object-position: bottom;" src="https://lh3.googleusercontent.com/Ic_1kNLwDfIHdWKvp-3iKGDkHvjxy0QZvelA_vOgIY6l6DuRTcQ3c9JITapze3F44yiNO67EsyrnJraPQvVsS0HtiBIDmRbdgaABXJHOYo_2=s0"/>
       <figcaption>Outline buttons contain less important supporting actions</figcaption>
     </figure>
   </div>
@@ -139,14 +141,14 @@ Users should be able to:
 <Card filled class="gap-2">
   <h2 id="icon">Icon Button</h2>
 
-  <div class="flex flex-row gap-4">
+  <div class="flex flex-col md:flex-row gap-4">
     <div class="flex flex-col gap-2 flex-1">
       <p>
         Icons visually communicate the button’s action and help draw attention. They should be placed on the leading side of the button, before the label text.
       </p>
     </div>
     <figure class="flex flex-col gap-2 flex-1">
-      <img src="https://lh3.googleusercontent.com/H9uUFctP3ob4KgvSs1-32gxNnw0J6F-sSnwwUR2ausgvJOHgR0TR3_TQYWiaqqt_hQvWBoudNZMHNIEoeKm95jK09JNZb-GxxTxzgPnvKsYH=s0"/>
+      <img height="252" style="height: 252px; object-fit: cover;" src="https://lh3.googleusercontent.com/H9uUFctP3ob4KgvSs1-32gxNnw0J6F-sSnwwUR2ausgvJOHgR0TR3_TQYWiaqqt_hQvWBoudNZMHNIEoeKm95jK09JNZb-GxxTxzgPnvKsYH=s0"/>
       <figcaption>Place the icon to the left of the label in buttons with text in left-to-right languages</figcaption>
     </figure>
   </div>

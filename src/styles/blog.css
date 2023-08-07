@@ -1,5 +1,5 @@
 .prose {
-	@apply flex flex-col gap-4 items-start mx-auto max-w-[60dvw];
+	@apply flex flex-col gap-4 items-start mx-auto ;
 
     & > * {
         width: 100%;
@@ -45,8 +45,7 @@
 
 	& iframe,
 	& video,
-	& pre,
-	& .rehype-code-title {
+	& pre {
 		@apply max-w-[100dvw];
 	}
 

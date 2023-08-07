@@ -1,5 +1,5 @@
 .code-wrap {
-	@apply bg-surface-variant overflow-auto rounded-md;
+	@apply bg-surface-variant overflow-auto rounded-md min-h-[3.5rem];
 
 	& code[class*='language-'],
 	& pre[class*='language-'] {
@@ -32,10 +32,6 @@
 				content: counter(step);
 				counter-increment: step;
 				transition: border 200ms;
-
-				&:hover {
-					@apply border-r-4;
-				}
 			}
 		}
 	}

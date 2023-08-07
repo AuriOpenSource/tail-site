@@ -6,9 +6,3 @@
 
     const arr = data.currentPath.split('');
 </script>
-
-<List let:item list={arr}>
-    <ListItem lines={1}>
-        {item}
-    </ListItem>
-</List>

@@ -3,24 +3,20 @@
 	import Card from '$lib/containment/Card.svelte';
 	import { formatDate } from '$lib/utils';
 	import { onMount } from 'svelte';
-	//@ts-expect-error no d.ts
+//@ts-expect-error no d.ts
 	import { updateTheme } from 'tailwind-material-colors/lib/updateTheme.esm';
 	import type { PageData } from './$types';
-	import Code from '$lib/utils/Code.svelte';
 
 	export let data: PageData;
-	const { content, frontmatter } = data;
+	const { frontmatter } = data;
 	onMount(() => {
 		updateTheme(
 			{
-				primary: '#3e4a36'
+				primary: `#${frontmatter.color}` 
 			},
 			'class'
 		);
 	});
-
-	console.log(frontmatter);
-	
 </script>
 
 <svelte:head>
@@ -46,7 +42,7 @@
 
 <section class="capitalize flex flex-row w-full justify-center my-4">
 	<ul class="capitalize flex flex-row bg-tertiary/70 p-1 gap-1 rounded-full">
-		{#each ['overview', 'usage', 'accessibility'] as hashes}
+		{#each ['overview', 'usage'] as hashes}
 			<li>
 				<Button href={'#' + hashes} extraClasses="interactive-bg-secondary icon-left">
 					{hashes}
@@ -56,6 +52,6 @@
 	</ul>
 </section>
 
-<div class="prose">
+<div class="prose w-full md:max-w-[60dvw]">
 	<svelte:component this={data.content}></svelte:component>
 </div>

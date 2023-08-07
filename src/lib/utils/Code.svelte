@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { IThemeRegistration, Lang } from 'shiki';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import codeworker from './codeWorker?worker';
 
 	export let source = '';
 	export let lang: Lang = 'html';
 	export let theme: IThemeRegistration = 'nord';
 
-	let worker: Worker;
+	let worker: Worker | null = null;
 	let code = '';
 
 	function initShiki() {
@@ -20,8 +20,9 @@
 		});
 	}
 	onMount(initShiki);
+	onDestroy(() => worker?.terminate());
 </script>
 
-<div class="code-wrap md:max-w-[60dvw] min-h-[5rem]">
+<div class="code-wrap ">
 	{@html code}
 </div>
