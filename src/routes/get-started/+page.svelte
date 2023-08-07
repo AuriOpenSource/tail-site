@@ -20,7 +20,7 @@
 	<p>To get started with Tail Material Design, follow these steps:</p>
 	<List>
 		<ListItem lines={1}>Install Tailwind CSS in your project (if not already installed)</ListItem>
-		<ListItem description="Install Tail Material Design using your preferred package manager:">
+		<ListItem heading="Install Tail Material Design using your preferred package manager:">
 			<Code
 				source={`
 			pnpm add -D tail-material-design
@@ -28,7 +28,7 @@
 			/>
 		</ListItem>
 		<ListItem
-			description="Import and configure Tail Material Design in your Tailwind CSS configuration file (typically named tailwind.config.js):"
+			heading="Import and configure Tail Material Design in your Tailwind CSS configuration file (typically named tailwind.config.js):"
 		>
 			<Code
 			lang="javascript"
@@ -43,7 +43,7 @@ export default {
 			`}
 			/>
 		</ListItem>
-		<ListItem description="Optional if you don't want to use tailwindcss, you can still use the components from a CDN:">
+		<ListItem heading="Optional if you don't want to use tailwindcss, you can still use the components from a CDN:">
 			<div class="flex flex-col gap-2">
 				<Code source={`
 					<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tail-material-design/dist/components/<COMPONENT_NAME>.min.css">
