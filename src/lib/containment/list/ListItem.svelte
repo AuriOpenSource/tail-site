@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let lines: 1 | 2 | 3 = 1;
+	export let lines: 1 | 2 | 3 | null = null;
 	export let heading: string | null = null;
 	export let description: string | null = null;
 </script>

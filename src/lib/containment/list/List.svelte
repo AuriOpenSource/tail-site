@@ -8,7 +8,11 @@
 
 <svelte:element this={tag} class="list {$$props.class ?? ''}">
 	<slot name="list-description" />
-	{#each list as item, i (i)}
-		<slot {item} />
-	{/each}
+	{#if list.length > 0}
+		{#each list as item, i (i)}
+			<slot {item} />
+		{/each}
+	{:else}
+		<slot />
+	{/if}
 </svelte:element>
