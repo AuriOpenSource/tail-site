@@ -1,7 +1,0 @@
-@import url('./properties.css');
-@import url('./code.css');
-@import url('./blog.css');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
