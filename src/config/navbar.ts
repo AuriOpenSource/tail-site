@@ -4,7 +4,7 @@ export default [
     to: "/components/overview",
   },
   {
-    title: "0.0.11",
-    items: [{ title: "0.0.11", to: "/changelog#0.0.11" }],
+    title: "0.0.12",
+    items: [{ title: "0.0.12", to: "/changelog#0.0.12" }],
   },
 ];

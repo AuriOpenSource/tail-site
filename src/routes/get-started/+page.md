@@ -1,3 +1,7 @@
+---
+title: Get Started
+---
+
 ## What is Tail Material Design?
 
 Tail Material Design is a comprehensive library that brings the power of Material Design to Tailwind CSS.
@@ -75,14 +79,14 @@ import { withMaterialColors } from 'tailwind-material-colors'
 import tmd from 'tail-material-design';
 export default withMaterialColors({
   // Here, your tailwind config.
-  // (Do not specify theme.colors or theme.extend.colors 
+  // (Do not specify theme.colors or theme.extend.colors
   // as they will be overwritten).
   plugins: [tmd]
 }, {
   // Here, your base colors as HEX values
   // primary is required
   primary: '#ff0000',
-  // secondary and/or tertiary are optional, 
+  // secondary and/or tertiary are optional,
   // if not set they will be derived from the primary color
   secondary: '#ffff00',
   tertiary: '#0000ff',
@@ -96,58 +100,70 @@ export default withMaterialColors({
 
 Here's a simple example of how you can leverage the Material Design styles in your web app:
 
-```html
-<div class="flex items-center justify-center">
-  <button class="btn btn-outlined">Click Here</button>
-</div>
+```svelte live async title=Button.svelte
+  <button class="btn btn-primary">Click Here</button>
+  <style>
+    @import url("https://cdn.jsdelivr.net/gh/AuriOpenSource/tail-material-design@master/dist/components/actions/btn.min.css");
+  </style>
 ```
 
 ## What we have already done
 
 Tail Material Design provides a growing collection of Material Design components. Here's an overview of what has already been implemented:
 
-- Action
-  - 👍 Common Buttons
-  - ❌ Extended FABs
-  - 👍 Fabs
-  - ❌ Icon Buttons
-  - ❌ Segmented Button
-- Communication
-  - ❌ Badges
-  - ❌ Progress Indicator
-  - ❌ Snackbar
-- Containment
-  - 👍 Bottom Sheet
-  - 👍 Cards
-  - ❌ Carousel
-  - ❌ Dialogs
-  - 👍 Dividers
-  - 👍 Lists
-  - ❌ Side Sheets
-  - ❌ Tooltips
-- Navigation
-  - ❌ Bottom App Bar
-  - ❌ Navigation Bar
-  - ❌ Navigation Drawer
-  - ❌ Navigation Rail
-  - ❌ Search
-  - ❌ Tabs
-  - ❌ Top App Bar
-- Selection
-  - 👍 Checkbox
-  - 👍 Chips
-  - ❌ Date Pickers
-  - ❌ Menus
-  - 👍 Radio Buttons
-  - 👍 Sliders
-  - 👍 Switch
-- Text Inputs
-  - ❌ Text Fields
+### Action
+
+- :+1: Common Buttons
+- ❌ Extended FABs
+- :+1: Fabs
+- :+1: Icon Buttons
+- ❌ Segmented Button
+
+### Communication
+
+- ❌ Badges
+- ❌ Progress Indicator
+- ❌ Snackbar
+
+### Containment
+
+- :+1: Bottom Sheet
+- :+1: Cards
+- ❌ Carousel
+- ❌ Dialogs
+- :+1: Dividers
+- :+1: Lists
+- ❌ Side Sheets
+- ❌ Tooltips
+
+### Navigation
+
+- :+1: Bottom App Bar
+- ❌ Navigation Bar
+- ❌ Navigation Drawer
+- :+1: Navigation Rail
+- ❌ Search
+- ❌ Tabs
+- ❌ Top App Bar
+
+### Selection
+
+- :+1: Checkbox
+- :+1: Chips
+- ❌ Date Pickers
+- ❌ Menus
+- :+1: Radio Buttons
+- :+1: Sliders
+- :+1: Switch
+
+### Text Inputs
+
+- ❌ Text Fields
 
 ## Contribution
 
-Contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+Contributions are welcome! If you encounter any [issues](https://github.com/AuriOpenSource/tail-material-design/issues/new) or have suggestions for improvements, feel free to open an issue or submit a [pull request](https://github.com/AuriOpenSource/tail-material-design/pulls).
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://github.com/AuriOpenSource/tail-material-design/blob/main/LICENSE).
