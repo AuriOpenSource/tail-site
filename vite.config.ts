@@ -2,7 +2,7 @@ import { defaultTheme } from "@sveltepress/theme-default";
 import { sveltepress } from "@sveltepress/vite";
 import { defineConfig } from "vite";
 import { navbar, sidebar } from "./src/config";
-
+import lightningcss from 'vite-plugin-lightningcss'
 export default defineConfig({
   define: {
     "process.env": {},
@@ -33,6 +33,9 @@ export default defineConfig({
         description: "What you wanted, now you have it",
       },
       addInspect: true,
+    }),
+    lightningcss({
+      browserslist: '>= 1%'
     }),
   ],
 });
